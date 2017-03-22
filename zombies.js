@@ -1,14 +1,16 @@
-/**
- * Class => Item(name)
- * -----------------------------
- * Creates an item.
- *
- * @name Item
- * @param {string} name     The item's name.
- * @property {string} name
- */
 
+class Item {
+  constructor(name) {
+    this.name = name;
+  }
+}
 
+class Weapon extends Item {
+  constructor(name, damage) {
+    super(name);
+    this.damage = damage;
+  }
+}
 /**
  * Class => Weapon(name, damage)
  * -----------------------------
