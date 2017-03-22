@@ -11,54 +11,38 @@ class Weapon extends Item {
     this.damage = damage;
   }
 }
-/**
- * Class => Weapon(name, damage)
- * -----------------------------
- * Creates a weapon item.
- * Weapon items can be equipped for use in battle.
- *
- * The Weapon class constructor will call
- *   the super class (Item) constructor
- *   while passing in the 1 Item constructor param
- *
- * @name Weapon
- * @param {string} name     The weapon's name.
- * @param {number} damage   The weapon's damage.
- * @property {number} damage
- */
 
+class Food extends Item {
+  constructor(name, energy) {
+    super(name);
+    this.energy = energy;
+  }
+}
 
-/**
- * Weapon Extends Item Class
- * -----------------------------
- */
+class Player {
+  constructor(name, health, strength, speed) {
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.speed = speed;
+    this.isAlive = true;
+    this.equipped = false;
+  }
 
+  getPack() {
+    this.pack = [];
+    return this.pack;
+  }
 
+  getMaxHealth() {
+    this.maxHealth = this.health;
+    return this.maxHealth;
+  }
 
-/**
- * Class => Food(name, energy)
- * -----------------------------
- * Creates a food item.
- * Food items give energy, restoring health to the player.
- *
- * The Food class constructor will call
- *   the super class (Item) constructor
- *   while passing in the 1 Item constructor param
- *
- * @name Food
- * @param {string} name       The food's name.
- * @param {number} energy     The energy the food provides.
- * @property {number} energy
- */
+  takeItem() {
 
-
-/**
- * Food Extends Item Class
- * -----------------------------
- */
-
-
-
+  }
+}
 /**
  * Class => Player(name, health, strength, speed)
  * -----------------------------
