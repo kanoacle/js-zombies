@@ -21,6 +21,8 @@ class Food extends Item {
 
 class Player {
   constructor(name, health, strength, speed) {
+    this._pack = [];
+    this._maxHealth = health;
     this.name = name;
     this.health = health;
     this.strength = strength;
@@ -30,17 +32,33 @@ class Player {
   }
 
   getPack() {
-    this.pack = [];
-    return this.pack;
+    return this._pack;
   }
 
   getMaxHealth() {
-    this.maxHealth = this.health;
-    return this.maxHealth;
+    return this._maxHealth;
   }
 
-  takeItem() {
+  checkPack() {
+    console.log(this._pack);
+  }
 
+  takeItem(item) {
+    if (this._pack.length >= 3) {
+      console.log('Unable to add to pack: pack is full');
+      return false;
+    } else {
+      this._pack.push(item);
+      return true;
+    }
+  }
+
+  discardItem(item) {
+    if (this._pack.indexOf(item) === -1) {
+      console.log('Nothing was discarded: ${item} was not found');
+    } else {
+
+    }
   }
 }
 /**
