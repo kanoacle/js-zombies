@@ -55,10 +55,33 @@ class Player {
 
   discardItem(item) {
     if (this._pack.indexOf(item) === -1) {
-      console.log('Nothing was discarded: ${item} was not found');
+      console.log(`Nothing was discarded: ${item.name} was not found`);
+      return false;
     } else {
-
+      var removed = this._pack.splice(this._pack.indexOf(item), 1);
+      console.log(removed + 'was removed');
+      return true;
     }
+  }
+
+  equip(itemToEquip) {
+    if (this.equipped ===  false) {
+      if (this._pack.indexOf(itemToEquip) === -1) {
+        console.log(`Nothing was equipped: ${itemToEquip.name} was not found`);
+        return;
+      } else {
+        this.equipped = itemToEquip;
+        this.discardItem(itemToEquip);
+      }
+    } else {
+      this.discardItem(itemToEquip);
+      this.takeItem(this.equipped);
+      this.equipped = itemToEquip;
+    }
+  }
+
+  eat() {
+
   }
 }
 /**
