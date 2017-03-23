@@ -58,8 +58,8 @@ class Player {
       console.log(`Nothing was discarded: ${item.name} was not found`);
       return false;
     } else {
-      var removed = this._pack.splice(this._pack.indexOf(item), 1);
-      console.log(removed + 'was removed');
+      var removed = this._pack.splice(this._pack.indexOf(item), 1)[0];
+      console.log(removed.name + ' was removed');
       return true;
     }
   }
@@ -102,7 +102,7 @@ class Player {
 
   equippedWith() {
     if (this.equipped !== false) {
-      console.log(this.name + 'is equipped with' + this.equipped.name);
+      console.log(this.name + ' is equipped with ' + this.equipped.name);
       return this.equipped.name;
     } else {
       console.log(this.name +  'does not have a weapon equipped');
@@ -186,3 +186,4 @@ function runGame() {
   console.log("After health: " + player.health);
   player.checkPack();
 }
+runGame();
