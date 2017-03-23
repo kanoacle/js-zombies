@@ -80,8 +80,13 @@ class Player {
     }
   }
 
-  eat() {
+  eat(itemToEat) {
+    if (typeof (itemToEat) === Food) {
+      this.discardItem(itemToEat);
+      if ((this.health + this._maxHealth) > this._maxHealth) {
 
+      }
+    }
   }
 }
 /**
